@@ -1,0 +1,22 @@
+{
+  "name": "easy-webpack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "mock": "json-server --config ./mock/json-server.json ./mock/db.json",
+    "predll:dev": "shx rm -rf ./dll/dev ./public/vendors/dev",
+    "dll:dev": "cross-env NODE_ENV=development webpack --config ./build/dll/dev.dll.config.js",
+    "predll:prod": "shx rm -rf ./dll/prod ./public/vendors/prod",
+    "dll:prod": "cross-env NODE_ENV=production webpack --config ./build/dll/prod.dll.config.js",
+    "dll": "npm run dll:dev && npm run dll:prod",
+    "dev": "node build/dev.js",
+    "build": "node build/build.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+  },
+  "dependencies": {}
+}
